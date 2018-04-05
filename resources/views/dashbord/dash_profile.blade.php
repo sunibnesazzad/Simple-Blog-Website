@@ -121,7 +121,7 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">About </label>
                                             <div class="col-sm-9">
-                                                <textarea type="text" name="about" class="form-control" id="about" disabled>{{$user->profile->about_me}}</textarea>
+                                                <textarea type="text" name="about" class="form-control" id="about" disabled>{!! $user->profile->about_me !!}</textarea>
                                             </div>
                                         </div>
                                     </form>

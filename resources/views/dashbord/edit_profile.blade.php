@@ -88,7 +88,7 @@
                                     <div class="form-group">
                                         <label for="inputPassword3" class="col-sm-2 control-label">About </label>
                                         <div class="col-sm-9">
-                                            <textarea type="text" name="about" class="form-control" id="editor1" required>{{$profile->about_me}}</textarea>
+                                            <input type="text" name="about" class="form-control" id="role" value="{{$profile->about_me}}" required>
                                         </div>
                                     </div>
 

@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();;
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('image')->default('/upload/default/avatar.jpg');;
+            $table->string('image')->default('/upload/default/avatar.jpg');
             $table->text('about_me')->nullable();
             $table->string('phone')->nullable();
             $table->string('platform')->nullable();
