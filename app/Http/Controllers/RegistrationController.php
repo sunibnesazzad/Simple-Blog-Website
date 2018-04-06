@@ -39,13 +39,13 @@ class RegistrationController extends Controller
         $user->name = request('name');
         $user->email = request('email');
         $user->password = bcrypt(request('password'));
-        $user->role_name = request('role');
+        /*$user->role_name = request('role');*/
         $user->save();
 
         //sign them in
         auth()->login($user);
         //assigning permission
-        $user->assignRole($user->role_name);
+        $user->assignRole('writer');
 
         //creating profile part
         $profile = new Profile;

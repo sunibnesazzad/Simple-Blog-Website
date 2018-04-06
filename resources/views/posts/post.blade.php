@@ -32,7 +32,7 @@
     </div>
     <a class="blog pink" href="/caegory">{{$post->category->name}}</a>
     <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
-    <p>{{ str_limit($post->body,200)}}</p>
+    <p>{!!  str_limit($post->body,200) !!}</p>
     <a class="btn btn-primary" href="/posts/{{$post->id}}">Read More</a>
 
     <div class="blog-poast-info">

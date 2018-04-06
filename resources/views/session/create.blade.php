@@ -49,7 +49,9 @@
             </form>
             <br>
         </div>
-        <p class="text-center">Don't have an anccount? -> <a href="/register"><strong><i>Register Now</i></strong></a></p>
+        <p class="text-center">Don't have an anccount ? -> <a href="/register"><strong><i>Register Now</i></strong></a></p>
+        <br>
+        <p class="text-center">Forget Your Password ? -> <a href="/forget_password"><strong><i>Click Here</i></strong></a></p>
     </div>
     <div class="copyright">
         <p class="agile-copyright">&copy; 2018 Simple Blog. All Rights Reserved | Design by <a href="https://www.facebook.com/sunibn.sazzad" target="_blank"><strong><i>Sun Ibne Sazzad</i></strong></a></p>

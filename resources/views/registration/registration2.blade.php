@@ -57,14 +57,14 @@
 
                         </div>
                     </li>
-                    <li>
+                   {{-- <li>
                         <label class="form-label"> Upload Image <span class="form-required"> * </span></label>
                         <div class="form-input">
                             <input type="file" id="image" name="image" multiple>
 
                         </div>
-                    </li>
-                    <li>
+                    </li>--}}
+                    {{--<li>
                         <label class="form-label"> Citizen <span class="form-required"> * </span></label>
                         <div class="form-input">
                             <select class="form-dropdown" name="role" required>
@@ -73,7 +73,7 @@
                                 @endforeach
                             </select>
                         </div>
-                    </li>
+                    </li>--}}
                 </ul>
                 <div class="submit_btn">
                     <input type="submit" value="Submit">

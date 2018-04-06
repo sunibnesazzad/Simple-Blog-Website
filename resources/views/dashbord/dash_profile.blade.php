@@ -52,7 +52,7 @@
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Role</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="role" class="form-control" id="role" value="{{$user->role_name}}" disabled>
+                                                <input type="text" name="role" class="form-control" id="role" {{--value="{{$user->role->name}}"--}} disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
