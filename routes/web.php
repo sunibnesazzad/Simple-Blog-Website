@@ -24,9 +24,15 @@ Route::get('/contact',function () {
     return view('contact');
 });
 
-
 // end  authentications
 
+// Password reset Routes
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset.token');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+
+// end of Password reset Routes
 
 Route::get('/','PostController@index')->name('home');
 

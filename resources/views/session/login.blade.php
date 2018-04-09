@@ -56,7 +56,7 @@
             </form>
             @include('includes.errors')
             <br>
-            <p>Don't have an anccount? -> <a href="/register"><i>Register Now</i></a>        <a href=""><i>Forget Password ?</i></a></p>
+            <p>Don't have an anccount? -> <a href="/register"><i>Register Now</i></a></p>
         </div>
         <div class="clear"></div>
     </div>

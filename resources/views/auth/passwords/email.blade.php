@@ -24,14 +24,14 @@
     </div>
     <div class="container">
         <div class="heading">
-            <h1>Log In</h1>
+            <h1>forgot  Password?</h1>
             <p></p>
         </div>
         <div class="agile-form">
 
             @include('includes.errors')
 
-            <form method="POST" action="/login">
+            <form method="POST" action="{{ route('password.email') }}">
                 {{csrf_field()}}
                 <ul class="field-list">
                     <li>
@@ -41,56 +41,18 @@
 
                         </div>
                     </li>
-                    <li>
-                        <label class="form-label"> Password <span class="form-required"> * </span></label>
-                        <div class="form-input">
-                            <input type="password" name="password" placeholder="Password" required>
-                        </div>
-                    </li>
                 </ul>
-               {{-- <a data-toggle="modal" href="#myModal">Forgot your password?</a>--}}
                 <div class="submit_btn">
                     <input type="submit" value="Log In">
                 </div>
             </form>
             <br>
+            <p class="text-center">Back to -> <a href="/login"><strong><i>Log In Page</i></strong></a></p>
         </div>
-        <p class="text-center">Don't have an anccount ? -> <a href="/register"><strong><i>Register Now</i></strong></a></p>
-        <br>
-        <p class="text-center" >Forget Your Password ? -> <a href="/password/reset"><strong><i>Click Here</i></strong></a></p>
     </div>
     <div class="copyright">
         <p class="agile-copyright">&copy; 2018 Simple Blog. All Rights Reserved | Design by <a href="https://www.facebook.com/sunibn.sazzad" target="_blank"><strong><i>Sun Ibne Sazzad</i></strong></a></p>
     </div>
-
-</div>
-{{--    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-<script>
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
-</script>--}}
-
+  </div>
 </body>
 </html>

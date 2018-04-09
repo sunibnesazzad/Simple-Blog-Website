@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Notifications\ResetPassword;
 
 class User extends Authenticatable
 {
@@ -39,6 +40,13 @@ class User extends Authenticatable
 
     public function role(){
         return $this->hasOne(Role::class);
+    }
+
+    // Here i am overriding this sendPasswordResetNotification for sending custom password reset email .
+    public function sendPasswordResetNotification($token)
+    {
+        // Your your own implementation.
+        $this->notify(new ResetPassword($token));
     }
 
 }
