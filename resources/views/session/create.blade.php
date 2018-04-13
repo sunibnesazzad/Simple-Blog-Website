@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Page Icon -->
+    <link rel="icon" href="{{asset('/image/ink.png')}}" type="image/gif" sizes="20x20">
     <!-- Meta tags -->
     <title>Log In</title>
     <meta charset="utf-8">
@@ -55,9 +57,10 @@
             </form>
             <br>
         </div>
-        <p class="text-center">Don't have an anccount ? -> <a href="/register"><strong><i>Register Now</i></strong></a></p>
-        <br>
-        <p class="text-center" >Forget Your Password ? -> <a href="/password/reset"><strong><i>Click Here</i></strong></a></p>
+        <div class="heading">
+            <p class="text-center">Don't have  account ?  <a href="/register"><strong><i>Register Now</i></strong></a></p>
+            <p class="text-center" >Forget Your Password ?  <a href="/password/reset"><strong><i>Click Here</i></strong></a></p>
+        </div>
     </div>
     <div class="copyright">
         <p class="agile-copyright">&copy; 2018 Simple Blog. All Rights Reserved | Design by <a href="https://www.facebook.com/sunibn.sazzad" target="_blank"><strong><i>Sun Ibne Sazzad</i></strong></a></p>

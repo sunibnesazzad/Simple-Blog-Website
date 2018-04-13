@@ -13,7 +13,7 @@
                 </form>
             </div>
             <div class="social">
-                <ul>
+                {{--<ul>
                     <li><a href="#" class="facebook"> </a></li>
                     <li><a href="#" class="facebook twitter"> </a></li>
                     <li><a href="#" class="facebook chrome"> </a></li>
@@ -21,7 +21,7 @@
                     <li><a href="#" class="facebook beh"> </a></li>
                     <li><a href="#" class="facebook vem"> </a></li>
                     <li><a href="#" class="facebook yout"> </a></li>
-                </ul>
+                </ul>--}}
             </div>
             <div class="clearfix"></div>
         </div>
@@ -41,7 +41,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="{{Request:: is ('/') ? 'active' : ''}}"><a href="/"><strong>Home</strong></a></li>
-                    {{--<li class="{{Request:: is ('create') ? 'active' : ''}}"><a href="/posts/create"><strong>Create</strong></a></li>--}}
+                    {{--<li class="{{Request:: is ('create') ? 'active' : ''}}"><a href="/post/create"><strong>Create</strong></a></li>--}}
                     <li class="{{Request:: is ('category') ? 'active' : ''}}"><a href="/category"><strong>Category</strong></a></li>
                     <li class="{{Request:: is ('register') ? 'active' : ''}}"><a href="/contact"><strong>Contact</strong></a></li>
                     @if(!Auth::check())

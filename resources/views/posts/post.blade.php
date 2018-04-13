@@ -1,18 +1,3 @@
-{{--
-
-<div class="panel-group">
-    <div class="panel panel-success">
-        <div class="panel-heading">  {{$post->title}}</div>
-        <div class="panel-body">
-            <p><strong>Author : </strong><i>{{ $post->user->name }}</i></p>
-            <strong>Category :</strong>   {{$post->category->name}} <br>
-            <p class="card-text">{{$post->body}}</p>
-            {{ $post->created_at->toFormattedDateString() }} <br>
-            <a href="/posts/{{$post->id}}" class="btn btn-primary">Read More</a>
-        </div>
-    </div>
-</div>
---}}
 
 
 <div class="soci">
@@ -30,7 +15,7 @@
     <div class="tch-img">
         <a href="/posts/{{$post->id}}"><img src="{{asset('upload/images/'.$post->image)}}" class="img-responsive" alt=""/></a>
     </div>
-    <a class="blog pink" href="/caegory">{{$post->category->name}}</a>
+    <a class="blog pink" href="/category">{{$post->category->name}}</a>
     <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
     <p>{!!  str_limit($post->body,200) !!}</p>
     <a class="btn btn-primary" href="/posts/{{$post->id}}">Read More</a>
@@ -40,8 +25,10 @@
             <li><i class="glyphicon glyphicon-user"> </i><a class="admin" href="/profile/{{$post->user->id}}"> {{ $post->user->name }} </a></li>
             <li><i class="glyphicon glyphicon-calendar"> </i>{{ $post->created_at->toFormattedDateString() }}</li>
             <li><i class="glyphicon glyphicon-comment"> </i><a class="p-blog" href="/posts/{{$post->id}}">{{$post->comments->count()}} </a></li>
-            <li><i class="glyphicon glyphicon-heart"></i><a class="admin" href="#">5 favourites </a></li>
-            <li><i class="glyphicon glyphicon-eye-open"> </i>1.128 views</li>
+            {{--<li><i class="glyphicon glyphicon-heart"></i><a class="admin" href="#">5 favourites </a></li>
+            <li><i class="glyphicon glyphicon-eye-open"> </i>1.128 views</li>--}}
         </ul>
     </div>
 </div>
+<div class="clearfix"></div>
+<br>

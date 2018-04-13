@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
     //showing all categories
     public function index(){
-        $categorys= Category::all();
+        $categorys= Category::paginate(12);
         $roles= Role::all();
-        return view('category.index',compact('categorys','roles'));
+        return view('category.newIndex',compact('categorys','roles'));
     }
 
     //showing create category page

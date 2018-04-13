@@ -80,6 +80,10 @@
                 </div>
             </form>
         </div>
+        <div class="heading">
+            <p >Or</p>
+            <a href="/login"><h3>Log in with your account</h3></a>
+        </div>
     </div>
     <div class="copyright">
         <p class="agile-copyright">&copy; 2018 Simple Blog. All Rights Reserved | Design by <a href="https://www.facebook.com/sunibn.sazzad" target="_blank"><strong><i>Sun Ibne Sazzad</i></strong></a></p>

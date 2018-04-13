@@ -31,14 +31,14 @@
         </li>
 
         <li class="has-subnav">
-            <a href="javascript:;">
+            <a href="javascript:">
                 <i class="fa fa-file-text-o nav_icon"></i>
                 <span class="nav-text">Blog</span>
                 <i class="icon-angle-right"></i><i class="icon-angle-down"></i>
             </a>
             <ul>
                 <li>
-                    <a class="subnav-text" href="/posts/create">
+                    <a class="subnav-text" href="/post/create">
                         Create Blog
                     </a>
                 </li>

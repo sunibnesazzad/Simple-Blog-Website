@@ -12,15 +12,17 @@ use App\Comment;
 class PostController extends Controller
 {
 
-    //middleware
+    /*//middleware
     public function __construct(){
         $this->middleware('auth')->except(['index','show']);
-    }
+    }*/
 
 
     public function index(){
 
-        $posts=Post::latest()->get();
+        /*$posts=Post::latest()->get();*/
+        /*paginating posts desc order to get the latest post 1st*/
+        $posts=Post::orderBy('id','desc')->paginate(3);
         return view('posts.index',compact('posts'));
     }
      //showing create view
