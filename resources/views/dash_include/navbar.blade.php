@@ -37,7 +37,7 @@
                             <div class="profile_img">
                                 {{--<span class="profil-img"><i class="fa fa-user" aria-hidden="true"></i></span>--}}
                                 <img alt="" src="{{asset('upload/default/'.$user->profile->image)}}" class="img-circle  thumb-sm">
-                                <span class="username">{{ Auth::user()->email }} </span>
+                                <span class="username">{{ Auth::user()->name }} </span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>

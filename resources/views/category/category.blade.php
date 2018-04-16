@@ -10,8 +10,8 @@
             @if(auth()->user()->hasRole('writer'))
         <div class="panel-footer">
             <div class="row">
-                <div class="col-md-6 text-center"><a href="{{ url("/update/{$category->id}") }}"><i class="fas fa-edit"></i></a></div>
-                <div class="col-md-6 text-center"><a href="{{ url("/delete/{$category->id}") }}"><i class="fas fa-trash-alt"></i></a></div>
+                <div class="col-md-6 text-center"><a href="{{ url("/update/{$category->id}") }}" title="Update Category"><i class="fas fa-edit"></i></a></div>
+                <div class="col-md-6 text-center"><a href="{{ url("/delete/{$category->id}") }}" title="Delete Category"><i class="fas fa-trash-alt"></i></a></div>
             </div>
         </div>
             @endif

@@ -5,13 +5,11 @@ Route::get('/logout','SessionController@destroy');
 
 //Category showing
 Route::get('/category','CategoryController@index');
-Route::get('/contact',function () {
-    return view('contact');
-});
+Route::get('/contact','PostController@contact');
 //showing specific post
 Route::get('/posts/{id}','PostController@show');
 
-
+Route::post('/queries','PostController@query');
 
 Route::group(['middleware' => 'guest'], function(){
 

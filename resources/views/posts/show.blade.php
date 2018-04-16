@@ -29,10 +29,10 @@
                                   <div class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img src="{{asset('business_theme/images/si.png')}}" alt="">
+                                            <img src="{{asset('upload/default/'.$comment->user->profile->image)}}" alt="" height="62" width="62">
                                         </a>
                                         <div class="media-body">
-                                            <h4 class="media-heading">{{ $comment->user->name }}</h4>
+                                            <h5 class="media-heading">{{ $comment->user->name }}</h5>
                                             <p><i>{{$comment->created_at->diffForHumans()}}<strong> : </strong> {{$comment->body}} </i></p>
 
                                         </div>
@@ -84,56 +84,23 @@
                 <div class="blo-top1">
                     <div class="tech-btm">
                         <h4>Top stories of the week </h4>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="{{asset('business_theme/singlepage.html')}}"><img src="{{asset('business_theme/images/6.jpg')}}images/6.jpg" class="img-responsive" alt=""/></a>
-                            </div>
-                            <div class="blog-grid-right">
 
-                                <h5><a href="singlepage.html">Pellentesque dui, non felis. Maecenas male</a> </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="singlepage.html"><img src="images/7.jpg" class="img-responsive" alt=""/></a>
-                            </div>
-                            <div class="blog-grid-right">
+                    @if(!empty($newposts->count()))
+                        <!--Start of Blog Item -->
+                            @foreach($newposts as $newpost)
+                                <div class="blog-grids">
+                                    <div class="blog-grid-left">
+                                        <a href="/posts/{{$newpost->id}}"><img src="{{asset('upload/images/'.$newpost->image)}}" class="img-responsive" alt=""/></a>
+                                    </div>
+                                    <div class="blog-grid-right">
 
-                                <h5><a href="singlepage.html">Pellentesque dui, non felis. Maecenas male</a> </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="singlepage.html"><img src="images/11.jpg" class="img-responsive" alt=""/></a>
-                            </div>
-                            <div class="blog-grid-right">
+                                        <h5><a href="/posts/{{$newpost->id}}">{{$newpost->title}}</a> </h5>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            @endforeach
+                        @endif
 
-                                <h5><a href="singlepage.html">Pellentesque dui, non felis. Maecenas male</a> </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="singlepage.html"><img src="images/9.jpg" class="img-responsive" alt=""/></a>
-                            </div>
-                            <div class="blog-grid-right">
-
-                                <h5><a href="singlepage.html">Pellentesque dui, non felis. Maecenas male</a> </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="singlepage.html"><img src="images/10.jpg" class="img-responsive" alt=""/></a>
-                            </div>
-                            <div class="blog-grid-right">
-
-                                <h5><a href="singlepage.html">Pellentesque dui, non felis. Maecenas male</a> </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
                     </div>
                 </div>
 

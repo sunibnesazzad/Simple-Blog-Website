@@ -9,7 +9,7 @@
 
             <!-- blank-page -->
             <div class="table-heading">
-                <h2>About Me</h2>
+                <h2>{!! $user->name !!} Information</h2>
             </div>
 
             <div class="well">

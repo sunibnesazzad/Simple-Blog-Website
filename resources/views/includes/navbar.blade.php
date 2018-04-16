@@ -7,11 +7,22 @@
                 <a href="/"><h1>SIMPLE BLOG</h1></a>
             </div>
             <div class="search">
-                <form>
-                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <form method="POST" action="/queries">
+                    {{csrf_field()}}
+                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" name="search">
                     <input type="submit" value="">
                 </form>
             </div>
+
+            {{--@if (count($posts) === 0)
+                <p>no posts found</p>
+            @elseif (count($posts) >= 1)
+                ... print out results
+                @foreach($posts as $post)
+                    {{$post->title}}
+                @endforeach
+            @endif--}}
+
             <div class="social">
                 {{--<ul>
                     <li><a href="#" class="facebook"> </a></li>

@@ -41,10 +41,10 @@
 <div class="container">
     @yield('content')
 </div>
-
-{{--<div class="modal-footer">
+<br>
+<br>
     @include('includes.footer')
-</div>--}}
+
 
 <!-- Latest compiled and minified JavaScript -->
 <!-- here stars scrolling icon -->

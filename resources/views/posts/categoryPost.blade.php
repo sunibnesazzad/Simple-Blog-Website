@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- For sizing change in style.css line 398 make min-height: 118em; -->
-    <br>
+
     @include('includes.errors')
     <br>
     <!-- technology -->
@@ -12,10 +12,10 @@
             <div class="col-md-9 technology-left">
                 <div class="">
                     <!-- technology-top -->
-                    @foreach($posts as $post)
-                        @include('posts.post')
-                    @endforeach
-                    <!-- technology-top -->
+                @foreach($posts as $post)
+                    @include('posts.post')
+                @endforeach
+                <!-- technology-top -->
                 </div>
             </div>
             <!-- technology-right -->

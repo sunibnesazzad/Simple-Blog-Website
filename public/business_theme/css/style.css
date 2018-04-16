@@ -4,6 +4,93 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+/*category panel css*/
+
+.panel-body h3:hover{
+    color: #45496e;
+}
+/*footer custom css*/
+.foot-nav p {
+    color:white;
+}
+.social-link-footer li a {
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+}
+.tweet-box {
+    background: #505b71;
+    padding: 20px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    color:white;
+}
+
+.tweet-box:before {
+    background-color: #505b71;
+    border-color: #505b71;
+    border-image: none;
+    border-right: 1px none #505b71;
+    border-style: none;
+    content: "";
+    display: block;
+    height: 22px;
+    left: 60px;
+    position: absolute;
+    top: 32px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 22px;
+}
+
+.tweet-box  a, .tweet-box i{
+    color: #00adef ;
+}
+
+.tweet-box  a:hover{
+    color: #F77B6F ;
+}
+
+.tweet-box i {
+    font-size: 40px;
+    float: left;
+    margin-right: 15px;
+}
+
+
+.social-link-footer li {
+    float: left;
+    margin: 0 10px 10px 0px;
+
+}
+
+.social-link-footer li a {
+    color: #fff;
+    background: #40397f;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.social-link-footer li a:hover {
+    background: #5992e1;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+/*Main css start from here uppers are custom for footer*/
 html, body{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 100%;
@@ -309,7 +396,7 @@ a.blog.orn{
     top: -33px;
 }
 .technology {
-    min-height: 203em;
+    min-height: 118em;
 }
 .tc-ch {
     float: left;
@@ -527,9 +614,10 @@ i.glyphicon.glyphicon-plus{
 }
 /*--footer-bottom--*/
 .copyright {
-    background: #fece14;
+    background: #475268;
     padding: 1em 0;
     text-align: center;
+    color:white;
 }
 .banner1{
 background: url(../images/banner.jpg) no-repeat 0px 0px;
@@ -823,7 +911,7 @@ h4.media-heading {
 }
 .copyright p {
     font-size: 0.875em;
-    color: #000;
+    color: #ffffff;
     line-height: 1.8em;
 }
 .copyright p a{
@@ -831,7 +919,7 @@ h4.media-heading {
 	font-weight:700;
 }
 .copyright p a:hover{
-    color:#fa4b2a;
+    color: #f6f7fa;
 }
 /*-- responsive-design --*/
 @media (max-width: 1024px){
@@ -875,9 +963,9 @@ ul.nav.navbar-nav li a {
 .foot-nav li a {
     padding: 0.7em 1.15em;
 }
-.technology {
+/*.technology {
     min-height: 200em;
-}
+}*/
 .comment-bottom input[type="submit"] {
     width: 16%;
     font-size: 1em;

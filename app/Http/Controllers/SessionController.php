@@ -26,7 +26,7 @@ class SessionController extends Controller
     public function store()
     {
         if (auth()->attempt(request(['email' , 'password']))) {
-            return redirect('/')->with('success','Log in successfylly.');
+            return redirect('/')->with('success','Log in successfully.');
         }else{
             return redirect('login')->with('error','Please check your creddential and try again');
         }

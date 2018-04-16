@@ -22,8 +22,9 @@ class PostController extends Controller
 
         /*$posts=Post::latest()->get();*/
         /*paginating posts desc order to get the latest post 1st*/
+        $newposts=Post::orderBy('id','desc')->paginate(5);
         $posts=Post::orderBy('id','desc')->paginate(3);
-        return view('posts.index',compact('posts'));
+        return view('posts.index',compact('posts','newposts'));
     }
      //showing create view
     public function create(){
@@ -35,9 +36,9 @@ class PostController extends Controller
 
     //showing specific Post
     public function show($id){
-
+           $newposts=Post::orderBy('id','desc')->paginate(5);
            $post =Post ::find($id);
-        return view('posts.show',compact('post'));
+        return view('posts.show',compact('post','newposts'));
     }
 
     //Showing the update Page
@@ -108,6 +109,24 @@ class PostController extends Controller
          //return $post->category_id;
 
         return redirect('/')->with('info','Post added Sucessfully');
+    }
+    /*for contact page*/
+    public function contact(){
+        $posts=Post::orderBy('id','desc')->paginate(5);
+        return view('contact',compact('posts'));
+    }
+
+    public function query(Request $request){
+        // Gets the query string from our form submission
+        $query = $request->input('search');;
+        // Returns an array of articles that have the query string located somewhere within
+        // our articles titles. Paginates them so we can break up lots of search results.
+        $posts=Post::where('title', 'LIKE', '%' . $query . '%')->orWhere('body','LIKE','%'.$query.'%')->paginate(10);
+        $newposts=Post::orderBy('id','desc')->paginate(5);
+        /*$posts=Post::orderBy('id','desc')->paginate(3);*/
+
+        // returns a view and passes the view the list of articles and the original query.
+        return view('posts.index', compact('posts', 'newposts'));
     }
 
 }
