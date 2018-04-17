@@ -66,8 +66,11 @@ class RegistrationController extends Controller
         //firing the mail
         Mail::to($user->email)->send(new Success_mail($user));
 
-        //redirect
-        return redirect()->home()->with('success','Registration is successful.');
+        $notification = [
+            'message' => 'Registration is successful.!',
+            'alert-type' => 'success'
+        ];
+        return redirect()->home()->with($notification);
     }
 
 }

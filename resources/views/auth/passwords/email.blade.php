@@ -43,7 +43,7 @@
                     </li>
                 </ul>
                 <div class="submit_btn">
-                    <input type="submit" value="Log In">
+                    <input type="submit" value="Send Mail">
                 </div>
             </form>
             <br>

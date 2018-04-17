@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +5,16 @@
     <link rel="icon" href="{{asset('/image/ink.png')}}" type="image/gif" sizes="20x20">
     <!-- Meta tags -->
     <title>Log In</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="{{asset('https://code.jquery.com/jquery-1.8.0.min.js')}}"></script>
+    <link href="{{asset('business_theme/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
+    <script src="{{asset('business_theme/js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css')}}">
     <!-- stylesheets -->
     <link rel="stylesheet" href="{{asset('reg_theme/css/style.css')}}" type="text/css" media="all">
-
     <!-- google fonts  -->
     <link href="//fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
     <!-- Modal scripts  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 <div class="w3ls-banner">
@@ -30,9 +27,6 @@
             <p></p>
         </div>
         <div class="agile-form">
-
-            @include('includes.errors')
-
             <form method="POST" action="/login">
                 {{csrf_field()}}
                 <ul class="field-list">
@@ -40,7 +34,6 @@
                         <label class="form-label"> E-Mail Address <span class="form-required"> * </span></label>
                         <div class="form-input">
                             <input type="email" name="email" placeholder="Mail@example.com" required>
-
                         </div>
                     </li>
                     <li>
@@ -65,35 +58,8 @@
     <div class="copyright">
         <p class="agile-copyright">&copy; 2018 Simple Blog. All Rights Reserved | Design by <a href="https://www.facebook.com/sunibn.sazzad" target="_blank"><strong><i>Sun Ibne Sazzad</i></strong></a></p>
     </div>
-
 </div>
-{{--    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</div>
-<script>
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
-</script>--}}
-
+@include('includes.alertjs')
 </body>
 </html>

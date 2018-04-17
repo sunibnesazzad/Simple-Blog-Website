@@ -13,7 +13,7 @@ class CategoryController extends Controller
     //showing all categories
     public function index(){
         $posts=Post::orderBy('id','desc')->paginate(5);
-        $categorys= Category::paginate(15);
+        $categorys= Category::paginate(10);
         $roles= Role::all();
         return view('category.newIndex',compact('categorys','roles','posts'));
     }
@@ -36,7 +36,11 @@ class CategoryController extends Controller
        $category->name = $request->input('category');
 
        $category->save();
-        return redirect('/category')->with('info','Category Added Successfully.');
+        $notification = [
+            'message' => 'Category Added Successfully.!',
+            'alert-type' => 'success'
+        ];
+        return redirect('/category')->with($notification);
 
     }
 
@@ -60,14 +64,22 @@ class CategoryController extends Controller
         );
         //updating in database
         Category::where('id',$id)->update($data);
+        $notification = [
+            'message' => 'Category Updated Sucessfully.!',
+            'alert-type' => 'success'
+        ];
 
-        return redirect('/category')->with('info','Category Updated Sucessfully');
+        return redirect('/category')->with($notification);
     }
 
     //deleting category
     public function destroy($id){
         Category::where('id',$id)->delete($id);
-        return redirect('/category')->with('info','Category Deleted Sucessfully');
+        $notification = [
+            'message' => 'Category Deleted Sucessfully.!',
+            'alert-type' => 'info'
+        ];
+        return redirect('/category')->with($notification);
     }
 
 }

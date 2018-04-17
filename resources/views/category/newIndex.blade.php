@@ -1,15 +1,18 @@
 @extends('layouts.master')
 @section('content')
-    <br>
-    <div>
-        <h1 class="text-center text-danger"><strong><i>Categories</i></strong></h1>
+
+    <div class="banner1">
+        <div class="container">
+            <br><br><br><br>
+            <h1 class="text-center" style="color: white"><strong><i>Blog Categories </i></strong></h1>
+        </div>
     </div>
     <br>
 
     <div class="technology-1">
         <div class="container">
             <div class="col-md-9 technology-left">
-                <div class="">
+                <div class="row">
 
 
                         @foreach($categorys as $category)
@@ -91,3 +94,15 @@
         </div>
     </div>--}}
 @endsection
+
+<style>
+    .banner1{
+        background: url(../images/banner.jpg) no-repeat 0px 0px;
+        background-size:cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        -moz-background-size: cover;
+        min-height: 300px;
+    }
+</style>

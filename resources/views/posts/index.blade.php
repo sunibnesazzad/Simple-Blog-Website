@@ -1,11 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-
     <!-- For sizing change in style.css line 398 make min-height: 118em; -->
-    <br>
     @include('includes.errors')
-    <br>
     <!-- technology -->
     <div class="technology-1">
         <div class="container">

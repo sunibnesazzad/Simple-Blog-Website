@@ -16,8 +16,12 @@ class CommentsController extends Controller
             'post_id' => $post->id,
             'user_id' => auth()->id()
         ]);
+        $notification = [
+            'message' => 'Your Comment Added Successfully!',
+            'alert-type' => 'success'
+        ];
 
-        return back();
+        return back()->with($notification);
 
     }
 }

@@ -44,7 +44,8 @@
                         </form>
                     </div>
                     <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12386182.960956775!2d-74.08302114251626!3d40.71866701702417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1436524193425"  style="border:0" allowfullscreen></iframe>
+                       {{-- my location--}}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14474.912037931448!2d91.82688232880915!3d24.907257644507997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3750555998556eaf%3A0x0!2zMjTCsDU0JzI2LjEiTiA5McKwNTAnMDguMyJF!5e0!3m2!1sen!2sbd!4v1523907731993" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -102,4 +103,5 @@
     </div>
 </div>
 <!-- technology -->
+
 @endsection

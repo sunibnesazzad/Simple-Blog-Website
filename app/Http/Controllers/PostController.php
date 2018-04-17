@@ -63,8 +63,12 @@ class PostController extends Controller
         );
         //updating in database
         Post::where('id',$id)->update($data);
+        $notification = [
+            'message' => 'Post Updated Successfully!',
+            'alert-type' => 'success'
+        ];
 
-        return redirect('/')->with('info','Data Updated Sucessfully');
+        return redirect('/')->with($notification);;
 
     }
 
@@ -107,8 +111,12 @@ class PostController extends Controller
         $post->save();
 
          //return $post->category_id;
+        $notification = [
+            'message' => 'Post added Sucessfully!',
+            'alert-type' => 'success'
+        ];
 
-        return redirect('/')->with('info','Post added Sucessfully');
+        return redirect('/')->with($notification);;
     }
     /*for contact page*/
     public function contact(){

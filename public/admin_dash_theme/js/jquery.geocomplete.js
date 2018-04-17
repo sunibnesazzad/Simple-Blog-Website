@@ -384,8 +384,8 @@
     },
 
     // Handles the geocode response. If more than one results was found
-    // it triggers the "geocode:multiple" events. If there was an error
-    // the "geocode:error" event is fired.
+    // it triggers the "geocode:multiple" events. If there was an errors
+    // the "geocode:errors" event is fired.
     handleGeocode: function(results, status){
       if (status === google.maps.GeocoderStatus.OK) {
         var result = results[0];
@@ -397,7 +397,7 @@
         }
 
       } else {
-        this.trigger("geocode:error", status);
+        this.trigger("geocode:errors", status);
       }
     },
 

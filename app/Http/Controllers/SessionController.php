@@ -19,16 +19,28 @@ class SessionController extends Controller
     public function destroy(){
 
         auth()->logout();
-        return redirect('/');
+        $notification = [
+            'message' => 'Logout Successfully!',
+            'alert-type' => 'success'
+        ];
+        return redirect('/login')->with($notification);
     }
 
 
     public function store()
     {
         if (auth()->attempt(request(['email' , 'password']))) {
-            return redirect('/')->with('success','Log in successfully.');
+            $notification = [
+                'message' => 'Login Successfully!',
+                'alert-type' => 'success'
+            ];
+            return  redirect('/')->with($notification);
         }else{
-            return redirect('login')->with('error','Please check your creddential and try again');
+            $notification = [
+                'message' => 'Please check your creddential and try again!',
+                'alert-type' => 'error'
+            ];
+            return  redirect('login')->with($notification);
         }
     }
 

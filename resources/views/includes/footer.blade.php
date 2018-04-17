@@ -1,7 +1,4 @@
-
-
 <!-- footer -->
-
 <div class="copyright">
     <div class="container">
         <div class="col-lg-3 col-sm-3">
@@ -50,9 +47,6 @@
         <p>Credit : <i><strong>Sun Ibne Sazzad</strong></i> </p>
     </div>
 </div>
-
-
-
 
 
 

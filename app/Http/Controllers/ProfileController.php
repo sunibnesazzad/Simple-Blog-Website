@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Profile;
 use App\User;
+use App\Role;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,9 @@ class ProfileController extends Controller
         $profile = Profile::where('user_id',Auth::User()->id)->first();
         $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();;
         $user = Auth::user();
-        return view('profile.profile',compact('profile','posts','user'))->with('title','Profile');
+        /*for first name*/
+
+        return view('profile.profile',compact('profile','posts','user','first_name'))->with('title','Profile');
     }
 
     public function update(){
@@ -71,8 +74,7 @@ class ProfileController extends Controller
         $profile->save();
         Profile::where('id',$id)->update($data1);
         User::where('id',$id)->update($data);
-        /*return redirect()->route('/dash', [$id])->with('info','Profile Updated Sucessfully');*/
-        /*return redirect('/profile')->with('info','Profile Updated Sucessfully');*/
+
         return redirect()->action('DashController@create', ['id' => $id])->with('info','Profile Updated Sucessfully')->with('title','Profile');
     }
     //Showing to normal users
@@ -80,7 +82,7 @@ class ProfileController extends Controller
 
         $profile= Profile::find($id);
         $user=  User::find($id);
-        $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();;
+        $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();
         return view('profile.show',compact('posts','user','profile'));
         /*return $profile;  */
     }

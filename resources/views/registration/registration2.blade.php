@@ -2,18 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Page Icon -->
+    <link rel="icon" href="{{asset('/image/ink.png')}}" type="image/gif" sizes="20x20">
     <!-- Meta tags -->
     <title>Registration Page</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <script src="{{asset('https://code.jquery.com/jquery-1.8.0.min.js')}}"></script>
+    <link href="{{asset('business_theme/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
+    <script src="{{asset('business_theme/js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css')}}">
     <!-- stylesheets -->
     <link rel="stylesheet" href="{{asset('reg_theme/css/style.css')}}" type="text/css" media="all">
-
     <!-- google fonts  -->
     <link href="//fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-
+    <!-- Modal scripts  -->
 </head>
 <body>
 <div class="w3ls-banner">
@@ -22,11 +25,11 @@
     </div>
     <div class="container">
         <div class="heading">
-            <h2>Registration Here</h2>
+            <h1>Registration</h1>
             <p></p>
         </div>
         <div class="agile-form">
-            <form method="POST" action="/register" enctype="multipart/form-data">
+            <form method="POST" action="/register">
                 {{csrf_field()}}
                 <ul class="field-list">
                     <li>
@@ -57,26 +60,9 @@
 
                         </div>
                     </li>
-                   {{-- <li>
-                        <label class="form-label"> Upload Image <span class="form-required"> * </span></label>
-                        <div class="form-input">
-                            <input type="file" id="image" name="image" multiple>
-
-                        </div>
-                    </li>--}}
-                    {{--<li>
-                        <label class="form-label"> Citizen <span class="form-required"> * </span></label>
-                        <div class="form-input">
-                            <select class="form-dropdown" name="role" required>
-                                @foreach($roles as $role)
-                                    <option value="{{$role->name}}">{{$role->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </li>--}}
                 </ul>
                 <div class="submit_btn">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Register">
                 </div>
             </form>
         </div>
@@ -89,5 +75,6 @@
         <p class="agile-copyright">&copy; 2018 Simple Blog. All Rights Reserved | Design by <a href="https://www.facebook.com/sunibn.sazzad" target="_blank"><strong><i>Sun Ibne Sazzad</i></strong></a></p>
     </div>
 </div>
+@include('includes.alertjs')
 </body>
 </html>

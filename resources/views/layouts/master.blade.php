@@ -1,39 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <link rel="icon" href="{{asset('/image/ink.png')}}" type="image/gif" sizes="20x20">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Our Simple Blog</title>
-
-    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="{{asset('business_theme/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
-    <!-- Custom Theme files -->
-    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="{{asset('business_theme/css/style.css')}}" rel='stylesheet' type='text/css' />
-    <script src="{{asset('business_theme/js/jquery-1.11.1.min.js')}}"></script>
-    <script src="{{asset('business_theme/js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            /*
-            var defaults = {
-                  containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear'
-             };
-            */
-
-            $().UItoTop({ easingType: 'easeOutQuart' });
-
-        });
-    </script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-
+    @include('includes.style')
 </head>
 <body>
 @include('includes.navbar')
@@ -43,13 +16,7 @@
 </div>
 <br>
 <br>
-    @include('includes.footer')
-
-
-<!-- Latest compiled and minified JavaScript -->
-<!-- here stars scrolling icon -->
-
-<!-- //here ends scrolling icon -->
-
+@include('includes.footer')
+@include('includes.alertjs')
 </body>
 </html>
