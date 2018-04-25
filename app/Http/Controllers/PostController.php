@@ -26,18 +26,18 @@ class PostController extends Controller
         $posts=Post::orderBy('id','desc')->paginate(3);
         return view('posts.index',compact('posts','newposts'));
     }
-     //showing create view
+    //showing create view
     public function create(){
 
         $user = Auth::user();
-         $categorys= Category::all();
+        $categorys= Category::all();
         return view('posts.create1',compact('categorys','user'))->with('title',"Create New Blog");
     }
 
     //showing specific Post
     public function show($id){
-           $newposts=Post::orderBy('id','desc')->paginate(5);
-           $post =Post ::find($id);
+        $newposts=Post::orderBy('id','desc')->paginate(5);
+        $post =Post ::find($id);
         return view('posts.show',compact('post','newposts'));
     }
 
@@ -45,24 +45,38 @@ class PostController extends Controller
     public function update($id){
         $post =Post ::find($id);
         $categorys= Category::all();
-        return view('posts.update',compact('post'));
+        $user = Auth::user();
+        return view('posts.update',compact('post','categorys','user'))->with('title',"Edit Blog");
     }
 
     //Storing updated Post
     public function edit(Request $request,$id){
-       //for validation
+        //for validation
         $this->validate($request,[
             'title' => 'required',
             'body' => 'required',
+            'category' => 'required'
         ]);
 
         $data = array(
-           'title' => $request->input('title'),
+            'title' => $request->input('title'),
             'body' => $request->input('body'),
-            'category_id' => $request->input('category'),
         );
+        //for image
+        $post =Post ::find($id);
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            $location = public_path('upload/images/' .$filename);
+            Image::make($image)->resize(800,400)->save($location);
+
+            $post->image=$filename;
+        }
+
+        $post->save();
         //updating in database
         Post::where('id',$id)->update($data);
+        $post->category()->attach($request->input('category'));
         $notification = [
             'message' => 'Post Updated Successfully!',
             'alert-type' => 'success'
@@ -76,8 +90,11 @@ class PostController extends Controller
     public function delete($id){
 
         Post::where('id',$id)->delete($id);
-        return $id;
-       // return redirect('/')->with('info','Post Deleted Successfully');
+        $notification = [
+            'message' => 'Post Deleted Sucessfully!',
+            'alert-type' => 'success'
+        ];
+        return redirect('/')->with($notification);
     }
 
     //storing in database
@@ -95,7 +112,7 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-        $post->category_id = $request->input('category');
+        /*$post->category_id = $request->input('category');*/
         $post->user_id = auth()->id();
 
         //for image
@@ -109,8 +126,9 @@ class PostController extends Controller
         }
 
         $post->save();
+        $post->category()->attach($request->input('category'));
 
-         //return $post->category_id;
+        //return $post->category_id;
         $notification = [
             'message' => 'Post added Sucessfully!',
             'alert-type' => 'success'
@@ -135,6 +153,15 @@ class PostController extends Controller
 
         // returns a view and passes the view the list of articles and the original query.
         return view('posts.index', compact('posts', 'newposts'));
+    }
+
+    public function myPosts($id)
+    {
+        $profile = Profile::find($id);
+        $user = User::find($id);
+        $posts = Post::where('user_id', Auth::User()->id)->orderBy('id', 'desc')->get();
+        return view('profile.show', compact('posts', 'user', 'profile'));
+        /*return $profile;  */
     }
 
 }

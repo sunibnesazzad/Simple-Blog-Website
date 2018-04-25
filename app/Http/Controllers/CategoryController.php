@@ -32,10 +32,10 @@ class CategoryController extends Controller
             'category' => 'required'
         ]);
 
-       $category = new Category;
-       $category->name = $request->input('category');
+        $category = new Category;
+        $category->name = $request->input('category');
 
-       $category->save();
+        $category->save();
         $notification = [
             'message' => 'Category Added Successfully.!',
             'alert-type' => 'success'

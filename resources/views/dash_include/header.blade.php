@@ -5,10 +5,6 @@
     <!-- Title -->
     <title>{{$title}}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Colored Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="{{asset('admin_dash_theme/css/bootstrap.css')}}">
@@ -44,11 +40,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript">CKEDITOR.replace( 'editor1' );</script>
 
-   {{-- <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-    <script>
-        tinymce.init({
-            selector: '#mytextarea'
+{{-- <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+ <script>
+     tinymce.init({
+         selector: '#mytextarea'
+     });
+ </script>--}}
+
+<!-- tables -->
+    <link rel="stylesheet" type="text/css" href="{{asset('admin_dash_theme/css/table-style.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('admin_dash_theme/css/basictable.css')}}" />
+    <script type="text/javascript" src="{{asset('admin_dash_theme/js/jquery.basictable.min.js')}}"></script>
+{{--<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').basictable();
+
+        $('#table-breakpoint').basictable({
+            breakpoint: 768
         });
-    </script>--}}
+
+        $('#table-swap-axis').basictable({
+            swapAxis: true
+        });
+
+        $('#table-force-off').basictable({
+            forceResponsive: false
+        });
+
+        $('#table-no-resize').basictable({
+            noResize: true
+        });
+
+        $('#table-two-axis').basictable();
+
+        $('#table-max-height').basictable({
+            tableWrapper: true
+        });
+    });
+</script>--}}
+<!-- //tables -->
 
 </head>

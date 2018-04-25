@@ -44,10 +44,10 @@
                                 <td>{{ $category->name  }}</td>
                                 <td>
                                     @if(auth()->check())
-                                    @if(auth()->user()->hasRole('writer'))
-                                    <a href="{{ url("/update/{$category->id}") }}" class="label label-success"> Update </a> |
-                                    <a href="{{ url("/delete/{$category->id}") }}" class="label label-danger"> Delete </a>
-                                    @endif
+                                        @if(auth()->user()->hasRole('writer'))
+                                            <a href="{{ url("/update/{$category->id}") }}" class="label label-success"> Update </a> |
+                                            <a href="{{ url("/delete/{$category->id}") }}" class="label label-danger"> Delete </a>
+                                        @endif
                                     @endif
                                 </td>
                             </tr>
@@ -67,17 +67,17 @@
     </div>--}}
 
         @if(auth()->check())
-    @if(auth()->user()->hasRole('writer'))
-    <div class="row">
-        <a href="/category/create" class="btn btn-primary btn-group-lg">Create New Category</a>
-    </div>
+            @if(auth()->user()->hasRole('writer'))
+                <div class="row">
+                    <a href="/category/create" class="btn btn-primary btn-group-lg">Create New Category</a>
+                </div>
 
 
-    @endif
+            @endif
         @endif
 
 
-</div>
+    </div>
 
     <!-- data showing part -->
 

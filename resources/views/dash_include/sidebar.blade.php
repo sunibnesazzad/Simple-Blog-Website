@@ -1,10 +1,10 @@
 <nav class="main-menu">
     <ul>
         <li>
-            <a href="index.html">
+            <a href="/">
                 <i class="fa fa-home nav_icon"></i>
                 <span class="nav-text">
-					Dashboard
+					Home
 					</span>
             </a>
         </li>
@@ -43,18 +43,8 @@
                     </a>
                 </li>
                 <li>
-                    <a class="subnav-text" href="calendar.html">
+                    <a class="subnav-text" href="/myposts/{{Auth::user()->id}}">
                         My Blogs
-                    </a>
-                </li>
-                <li>
-                    <a class="subnav-text" href="signup.html">
-                        Sign Up Page
-                    </a>
-                </li>
-                <li>
-                    <a class="subnav-text" href="login.html">
-                        Login Page
                     </a>
                 </li>
             </ul>

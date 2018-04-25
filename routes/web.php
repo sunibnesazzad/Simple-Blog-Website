@@ -26,43 +26,12 @@ Route::group(['middleware' => 'guest'], function(){
     Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 });
-
-
-//authentication section
-
-/*Route::get('/login','SessionController@create');
-Route::post('/login','SessionController@store')->name('login');
-Route::get('/register','RegistrationController@create');
-
-Route::post('/register','RegistrationController@store');
-*/
-// end  authentications
-// Password reset Routes
-// end of Password reset Routes
-
-
-
-                 //Category section
-/*//Category showing
-Route::get('/category','CategoryController@index');
-//Category creating page
-Route::get('/category/create','CategoryController@create');
-//new Category saving in database
-Route::post('/category','CategoryController@store');
-//showinf category update page
-Route::get('/update/{id}','CategoryController@update');
-//Updating category
-Route::post('/update/{id}','CategoryController@edit');
-//deleting category
-Route::get('/delete/{id}','CategoryController@destroy');*/
-
-
-
-
 ///using route middleware
 Route::group(array('middleware' => 'auth'), function() {
     Route::group(array('middleware' => ['role:writer']), function() {
 
+        //blog part
+        Route::get('/post/create','PostController@create');
         //Updating post
         Route::get('/update/{id}','PostController@update');
 
@@ -78,26 +47,13 @@ Route::group(array('middleware' => 'auth'), function() {
         //new Category saving in database
         Route::post('/category','CategoryController@store');
         //showinf category update page
-        Route::get('/update/{id}','CategoryController@update');
+        Route::get('/category/update/{id}','CategoryController@update');
         //Updating category
-        Route::post('/update/{id}','CategoryController@edit');
+        Route::post('/category/update/{id}','CategoryController@edit');
         //deleting category
-        Route::get('/delete/{id}','CategoryController@destroy');
-
-        //blog part
-        Route::get('/post/create','PostController@create');
-
-        //Updating post
-        Route::get('/update/{id}','PostController@update');
-
-        Route::Post('/updates/{id}','PostController@edit');
-        //Deleting Post
-        Route::get('/delete/{id}','PostController@delete');
-
-        //soting post in database
-        Route::post('/posts','PostController@store');
-
-
+        Route::get('/category/delete/{id}','CategoryController@destroy');
+        /*Showing all my Posts*/
+        Route::get('/myposts/{id}','ProfileController@myposts');
 
     });
 
@@ -115,6 +71,9 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::get('/profile/{id}','ProfileController@show');
 
     Route::get('/dash/{id}','DashController@create')->name('dash');
+    /*showing my posts*/
+    Route::get('/profile/{id}','ProfileController@show');
+    /*Showing all my Posts*/
 
 
 });

@@ -17,7 +17,7 @@ class ProfileController extends Controller
     public function create(){
 
         $profile = Profile::where('user_id',Auth::User()->id)->first();
-        $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();;
+        $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();
         $user = Auth::user();
         /*for first name*/
 
@@ -85,5 +85,14 @@ class ProfileController extends Controller
         $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();
         return view('profile.show',compact('posts','user','profile'));
         /*return $profile;  */
+    }
+
+    //Showing to all my postss
+    public function myposts($id){
+
+        $profile= Profile::find($id);
+        $user=  User::find($id);
+        $posts= Post::where('user_id',Auth::User()->id)->orderBy('id','desc')->get();
+        return view('posts.myPosts',compact('posts','user','profile'))->with('title',"My Blogs");
     }
 }

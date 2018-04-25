@@ -15,7 +15,11 @@
                             <h5>{{$post->title}}</h5>
                             <p><strong>Author : </strong><i>{{ $post->user->name }}</i></p>
                             <p><i>{{$post->created_at->toFormattedDateString()}}</i></p>
-                            <strong>Category :</strong>   {{$post->category->name}} <br>
+                            <p><strong>Category : </strong>
+                            @foreach($post->category as $category)
+                                <a class="blog1">{{$category->name}}, </a>
+                            @endforeach
+                            </p>
                             <p>{!! $post->body !!}</p>
                         </div>
                     </div>

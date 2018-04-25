@@ -3,7 +3,9 @@
     <div class="tch-img">
         <a href="/posts/{{$post->id}}"><img src="{{asset('upload/images/'.$post->image)}}" class="img-responsive" alt=""/></a>
     </div>
-    <a class="blog1" href="/category">{{$post->category->name}}</a>
+    @foreach($post->category as $category)
+        <a class="blog1">{{$category->name}}</a>
+    @endforeach
     <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
     <p>{!!  str_limit($post->body,200) !!}
         <a style="color: red" href="/posts/{{$post->id}}"><strong><i>Read More</i></strong></a>
