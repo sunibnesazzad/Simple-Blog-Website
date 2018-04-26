@@ -25,6 +25,10 @@ Route::group(['middleware' => 'guest'], function(){
     Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset.token');
     Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
+    //Routes for google login
+    Route::get('/auth/google', 'GoogleLoginController@redirect')->name('google.login');
+    Route::get('auth/google/callback', 'GoogleLoginController@callback');
+
 });
 ///using route middleware
 Route::group(array('middleware' => 'auth'), function() {

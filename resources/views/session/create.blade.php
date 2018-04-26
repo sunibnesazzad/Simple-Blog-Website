@@ -47,6 +47,7 @@
                 <div class="submit_btn">
                     <input type="submit" value="Log In">
                 </div>
+                <p class="text-center">Log in with Google  <a href="/auth/google"><strong><i>Google</i></strong></a></p>
             </form>
             <br>
         </div>
