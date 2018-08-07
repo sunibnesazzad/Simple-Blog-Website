@@ -29,7 +29,7 @@ class GoogleLoginController extends Controller
         auth()->login($user);
 
         $notification = [
-            'message' => 'Login Successfully!',
+            'message' => 'Login with Google account Successfully!',
             'alert-type' => 'success'
         ];
         return redirect()->to('/')->with($notification);

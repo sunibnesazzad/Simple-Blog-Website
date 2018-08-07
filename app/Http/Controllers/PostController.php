@@ -82,7 +82,7 @@ class PostController extends Controller
             'alert-type' => 'success'
         ];
 
-        return redirect('/')->with($notification);;
+        return redirect('/')->with($notification);
 
     }
 
